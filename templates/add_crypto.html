@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block content %} {% if 'user_id' in session %}
+<h1>Add a Crypto to Inventory</h1>
+<head></head>
+<div class="form-wrap">
+  <div class="cryptoform">
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      <div>
+        {% for field in form if field.widget.input_type != "hidden" %}
+        <div class="crypto-name">{{field.label}}</div>
+        <div>{{field}} <br /></div>
+        {% endfor %}
+      </div>
+      <br />
+      <button type="submit" class="btnreg">Submit</button>
+      <button type="button">
+        <a class="btnlink" href="/inventory/{{g.user.id}}"> Go Back</a>
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endif %} {% endblock %}

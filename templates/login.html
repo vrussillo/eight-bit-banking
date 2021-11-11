@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block content %}
+<div class="vault-opened">
+  <img
+    class="vault-opened-img"
+    src="static/images/8bit-banking-login-01.png"
+    alt="Vault"
+  />
+  <form class="usr" method="POST">
+    {{ form.hidden_tag() }} {% for field in form if field.widget.input_type !=
+    'hidden' %}
+    <p>
+      {{ field.label }} {{ field }} {% for error in field.errors %} {{ error }}
+      {% endfor %}
+    </p>
+    {% endfor %}
+
+    <button class="btn btn-primary" id="btnlgn" type="submit">Login</button>
+  </form>
+  <a href="/"
+    ><button class="btn btn-primary" id="btngoback" type="submit">
+      Go Back
+    </button></a
+  >
+</div>
+
+<div class="chest-container-tv-right">
+  <div class="bag-div">
+    <img
+      class="chest-bag"
+      src="{{ url_for('static', filename='/images/chest-art-tv-shelf-01.png')}}"
+      alt="TV"
+    />
+  </div>
+</div>
+{% endblock %}

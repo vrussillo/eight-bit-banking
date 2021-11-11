@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="vault-closed">
+  <img
+    class="vault-closed-img"
+    src="static/images/just-vault-closed-homepage-01.png"
+    alt="Vault"
+  />
+
+  {% if 'user_id' not in session %}
+  <a class="btn btn-primary" id="btnreg" href="/register">Register</a>
+  <a class="btn btn-primary" id="btnlgn1" href="/login" onclick="playAudio()"
+    >Login</a
+  >
+  {% endif %} {% if 'user_id' in session %}
+  <a class="btn btn-primary" id="btnlgn1" href="/logout">Logout</a>
+  <a class="btn btn-primary" id="btnreg" href="/inventory/{{user.id}}"
+    >Inventory</a
+  >
+  {% endif %}
+</div>
+{% endblock %}

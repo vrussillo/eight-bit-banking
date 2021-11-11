@@ -1,0 +1,667 @@
+  /* --------------All----------------- */
+
+html, body {
+    height: 75%;
+    width: 100%;
+ }
+ 
+ body{
+    background: linear-gradient(180deg, #656a6e 0%, #44484b 100%);
+    font-size: 18px;
+    margin: 0;
+    margin-top: 10em;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+ }
+
+ h4 {
+    color: white;
+    font-family: 'pixeboyregular';
+    font-size: 35px;
+ }
+ .message {
+   max-width: 1000px;
+   font-family: 'pixeboyregular';
+   letter-spacing: 3px;
+   padding: 0 auto;
+   position: absolute;
+   top: 10%;
+   left: 41%;
+   -moz-transform: translateX(-40%) translateY(-50%);
+   -webkit-transform: translateX(-40%) translateY(-50%);
+   transform: translateX(-30%) translateY(-50%);
+ }
+
+
+  /* --------------All----------------- */
+ 
+ /* --------------Inventory----------------- */
+
+.currency-info {
+   color: white;
+   max-width: 900px;
+   margin: 0 auto;
+   padding-left: 1em;
+   padding-right: 1em;
+}
+
+ .wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 1em;
+    padding-right: 1em;
+ }
+
+ .card {
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    position:relative;
+    display:grid;
+    justify-items: center;
+    align-items: center;
+    padding-top: 1em;
+    padding-bottom: 2em;
+    max-height: 100%;
+ }
+ .card img {
+    display: block;
+    position:relative;
+    z-index:1;
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 1em;
+    transition: transform 0.2s ease-in-out;
+    
+ }
+ .card-info {
+   max-width: 15%;
+   display: block;
+   position:relative;
+   z-index:1;
+   left: -25%;
+   height: 25%;
+   margin: 0 auto;
+   transform:translateY(10%);
+ }
+
+ .card:hover img {
+    transform:translateY(-5%);
+ }
+
+ .item-title {
+    position: absolute;
+    left:1em;
+    bottom:0.5em;
+    font-family: 'pixeboyregular';
+    font-size: large;
+    letter-spacing: 2px;
+    color: black;
+ }
+
+ .item-title-amnt {
+    position: absolute;
+    left:7em;
+    bottom:0.5em;
+    font-family: 'pixeboyregular';
+    font-size: large;
+    letter-spacing: 2px;
+    color: black;
+ }
+
+ .image-container {
+    position:relative;
+    bottom: 7%;
+    
+ }
+ .shadow {
+    position:absolute;
+    bottom:2em;
+    left: 50%;
+    transform: translateX(-50%);
+ }
+
+ .addcrypto {
+    opacity: 60%;
+ }
+ 
+ 
+ .layout {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    padding-bottom: 1em;
+ }
+
+ .price-widget {
+    top: 93%;
+    position: fixed;
+ }
+
+/* --------------Inventory----------------- */
+
+/* --------------Account----------------- */
+
+.container {
+   max-width: 65%;
+   transform: translateY(-5%);
+   font-family: 'pixeboyregular';
+   color: white;
+   letter-spacing: 3px;
+   font-size: 28px;
+}
+
+.user-name, .user-email {
+   font-family: 'pixeboyregular';
+   color: white;
+   letter-spacing: 3px;
+   font-size: 26px;
+}
+.user-profile{
+   padding-top: 0.5em;
+}
+.account-p {
+   margin-top: 1em;
+   color: white;
+   letter-spacing: 3px;
+   font-size: 18px;
+}
+
+.mb-3 {
+   font-family: 'pixeboyregular';
+   letter-spacing: 3px;
+   font-size: 25px;
+}
+
+.pwd-cnfrm {
+   padding-top: 1em;
+   font-size: 20px;
+}
+
+.form-group {
+   padding-top: 6px;
+   padding-bottom: 2px;
+}
+
+/* --------------Account----------------- */
+
+/* --------------pixel font----------------- */
+
+@font-face {
+    font-family: 'pixeboyregular';
+    src: url('/static/webfontkit-20211003-012249/pixeboy-z8xgd-webfont.woff2') format('woff2'),
+         url('/static/webfontkit-20211003-012249/pixeboy-z8xgd-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* --------------pixel font----------------- */
+
+/* --------------Nav Bar----------------- */
+
+.navbar, h1 {
+   font-family: 'pixeboyregular';
+   letter-spacing: 4px;
+   font-size: 30px;
+   background: #3b4449;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+   color:#fff;
+   padding: 0.7em;
+   margin-bottom: 1em;
+   text-align: center; 
+   position: absolute; 
+   width: 100%;
+   float: inline-start;    
+   top: 0;
+   left: 0;
+   list-style-type: none;
+}
+
+.invnav, .homenav, .accountnav, .cryptnav, .lgtnav {
+  color: aliceblue;
+  text-decoration: none;
+  max-width: 100%;
+  margin: 0 auto;
+  padding-left: 2em;
+  padding-right: 2em;
+  line-height: 1em;
+  display: inline-block;
+}
+
+/* --------------Nav Bar----------------- */
+
+/* --------------Chest images----------------- */
+
+.chest-toast {
+   width: 75%;
+}
+
+.chest-egg {
+   width: 150%;
+}
+
+.chest-bag {
+   width: 150%;
+}
+
+.toast-div {
+   top: 20%;
+   left: 80%;
+}
+
+.bag-div {
+   top: 50%;
+}
+
+
+.chest-container {
+   width: 20%;
+   position: absolute;
+   left: -0.3%;
+}
+
+.chest-container-toast {
+   width: 20%;
+   position: absolute;
+   top: 60%;
+   left: -0.3%;
+}
+.chest-container-egg-right {
+   width: 10%;
+   position: absolute;
+   left: 85%;
+}
+
+.chest-container-bag-right {
+   width: 10%;
+   position: absolute;
+   top: 60%;
+   left: 85%;
+}
+
+.chest-container-tv-right {
+   width: 10%;
+   position: absolute;
+   top: 58.7%;
+   left: 85%;
+}
+
+.chest-container button {
+   position: absolute;
+   top: 9%;
+   left: 44%;
+}
+
+.chest-skull {
+   position: fixed;
+   top: 50%;
+   left: 51%;
+   -moz-transform: translateX(-40%) translateY(-50%);
+   -webkit-transform: translateX(-40%) translateY(-50%);
+   transform: translateX(-40%) translateY(-50%);
+}
+
+/* --------------Chest images----------------- */
+
+/* --------------Vault images----------------- */
+
+.vault-closed-img {
+    width: 75%;
+    height: 75%;
+}
+
+.vault-opened-img {
+    width: 96.5%;
+    height: 100%;
+    
+}
+
+.vault-closed {
+    position: absolute;
+    top: 50%;
+    left: 52%;
+    -moz-transform: translateX(-40%) translateY(-50%);
+    -webkit-transform: translateX(-40%) translateY(-50%);
+    transform: translateX(-40%) translateY(-50%);
+    text-shadow:-2px 2px 3px rgb(68, 67, 67);
+}
+
+
+
+.vault-opened {
+   position: absolute;
+   top: 50%;
+   left: 52%;
+   -moz-transform: translateX(-50%) translateY(-50%);
+   -webkit-transform: translateX(-50%) translateY(-50%);
+   transform: translateX(-61.5%) translateY(-50%);
+   
+}
+
+/* --------------Vault images----------------- */
+
+/* --------------Forms----------------- */
+
+.usr {
+    font-family: 'pixeboyregular';
+    position: absolute;
+    top: 90%;
+    left: 40%;
+    width: 15%;
+    height: 12%;
+    letter-spacing: 3px;
+    font-size: 18px;
+    -moz-transform: translateX(-40%) translateY(-50%);
+    -webkit-transform: translateX(-40%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.cryptoform {
+    font-family: 'pixeboyregular';
+    letter-spacing: 3px;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    background: rgb(158, 55, 55);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    position:relative;
+    display:grid;
+    justify-items: center;
+    align-items: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+
+}
+.cryptoform input{
+   width:100%;
+   padding: 5px 0px 0px 0px;
+   margin: 0px 0px 30px 0px;
+   text-align: left;
+  
+}
+
+.usr {
+   top: 32%;
+   left: 50.5%;
+}
+
+input {
+   width: 17vw;
+   margin-bottom:1px;
+}
+
+/* --------------Forms----------------- */
+
+  /* --------------Delete Crypto----------------- */
+  .form-wrap {
+   max-width: 450px;
+   margin: 0 auto;
+   padding-left: 1em;
+   padding-right: 1em;
+}
+
+.delete-crypto{
+  position:relative;
+  left: 78%;
+  max-width: 100%;
+  margin: -10px auto;
+}
+
+.btn-secondary {
+   font-family: 'pixeboyregular';
+   font-size: 22px;
+   text-align: center;
+   line-height: 11px;
+   width: 12%;
+   padding-left: 6px;
+   color: rgb(255, 255, 255);
+   transform: translate(60%, 20%);
+ }
+
+ /* --------------Delete Crypto----------------- */
+
+ /* --------------Show Crypto----------------- */
+
+ .currency-info {
+    padding-top: 3em;
+    font-size: 12px;
+    transform: translate(20%, -40%);
+    
+ }
+
+ /* --------------Show Crypto----------------- */
+
+/* --------------Buttons----------------- */
+
+.errbtn {
+   font-family: 'pixeboyregular';
+   position: fixed;
+   letter-spacing: 3px;
+   left: 48%;
+   top: 68%;
+   font-size: 2vw;
+   /* -moz-transform: translateX(-40%) translateY(-50%);
+   -webkit-transform: translateX(-40%) translateY(-50%);
+   transform: translateX(-30%) translateY(-50%); */
+   z-index: 1;
+   color: rgb(85, 7, 7);
+   text-decoration: none;
+}
+
+
+#btnreg {
+    font-family: 'pixeboyregular';
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    letter-spacing: 3px;
+    font-size: 2vw;
+    -moz-transform: translateX(-40%) translateY(-50%);
+    -webkit-transform: translateX(-40%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-color: rgb(145, 145, 145);
+    text-shadow:-2px 2px 3px rgb(68, 67, 67);
+}
+
+#btn-delete {
+    font-family: 'pixeboyregular';
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    letter-spacing: 3px;
+    font-size: 2vw;
+    -moz-transform: translateX(-40%) translateY(-50%);
+    -webkit-transform: translateX(-40%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-color: rgb(226, 80, 80);
+    text-shadow:-2px 2px 3px rgb(68, 67, 67);
+    border-color: salmon;
+}
+
+.edit-btn-area {
+   padding-top: 1em;
+}
+
+.btnlink {
+text-decoration: none;
+color: rgb(185, 6, 6);
+}
+
+
+
+#btnlgt, .delete-btn {
+    font-family: 'pixeboyregular';
+    position: fixed;
+    letter-spacing: 3px;
+    left: 90%;
+    font-size: 2vw;
+    -moz-transform: translateX(-40%) translateY(-50%);
+    -webkit-transform: translateX(-40%) translateY(-50%);
+    transform: translateX(-30%) translateY(-50%);
+    
+}
+
+#btnlgn1 {
+    font-family: 'pixeboyregular';
+    position: absolute;
+    top: 90%;
+    left: 25%;
+    letter-spacing: 3px;
+    font-size: 2vw;
+    -moz-transform: translateX(-40%) translateY(-50%);
+    -webkit-transform: translateX(-40%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-color: rgb(145, 145, 145);  
+}
+
+
+#btnply {
+    font-family: 'pixeboyregular';
+    width: 0%;
+    height: 0%;
+    letter-spacing: 3px;
+    font-size: 2vw;
+    -moz-transform: translateX(-40%) translateY(-50%);
+    -webkit-transform: translateX(-40%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-color: none;   
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    text-shadow:-2px 2px 3px rgb(68, 67, 67);
+}
+
+#btngoback {    
+   font-family: 'pixeboyregular';
+   position: absolute;
+   top: 89.70%;
+   left: 70%;
+   letter-spacing: 3px;
+   font-size: 2vw;
+   -moz-transform: translateX(-40%) translateY(-50%);
+   -webkit-transform: translateX(-40%) translateY(-50%);
+   transform: translateX(-50%) translateY(-50%);
+   background-color: rgb(145, 145, 145);
+   text-shadow:-2px 2px 3px rgb(68, 67, 67);
+}
+
+#btnlgn, #btnreg1 {
+    font-family: 'pixeboyregular';
+    position: absolute;
+    top: 530%;
+    left: 40%;
+    letter-spacing: 3px;
+    font-size: 2vw;
+    -moz-transform: translateX(-40%) translateY(-50%);
+    -webkit-transform: translateX(-40%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-color: rgb(145, 145, 145);
+    text-shadow:-2px 2px 3px rgb(68, 67, 67);
+    border: none;
+}
+
+/* --------------Buttons----------------- */
+
+
+
+/* --------------account settings----------------- */
+
+   /* body{margin-top:20px;
+      color: #bcd0f7;
+          background: #1A233A;
+      } */
+      .account-settings .user-profile {
+          margin: 0 0 1rem 0;
+          padding-bottom: 1rem;
+          text-align: center;
+      }
+      .account-settings .user-profile .user-avatar {
+          margin: 0 0 1rem 0;
+      }
+      .account-settings .user-profile .user-avatar img {
+          width: 90px;
+          height: 90px;
+          -webkit-border-radius: 100px;
+          -moz-border-radius: 100px;
+          border-radius: 100px;
+      }
+      .account-settings .user-profile h5.user-name {
+          margin: 0 0 0.5rem 0;
+      }
+      .account-settings .user-profile h6.user-email {
+          margin: 0;
+          font-size: 0.8rem;
+          font-weight: 400;
+      }
+      .account-settings .about {
+          margin: 1rem 0 0 0;
+          font-size: 0.8rem;
+          text-align: center;
+      }
+      .cardacnt {
+          background: #272E48;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          border-radius: 5px;
+          border: 0;
+          margin-bottom: 1rem;
+      }
+      .form-control {
+          border: 1px solid #596280;
+          -webkit-border-radius: 2px;
+          -moz-border-radius: 2px;
+          border-radius: 2px;
+          font-size: .825rem;
+          background: #1A233A;
+          color: #bcd0f7;
+      }
+
+
+/* --------------account settings----------------- */
+
+
+/* --------------Media Queries----------------- */
+
+@media (max-width: 700px) {
+   .card {
+      grid-column: span 2;
+   }
+   
+   .card-b {
+      grid-column: 1/5;
+      grid-row: 1/2;
+   }
+   .card-c {
+      grid-column: 1/5;
+      grid-row: 2/3;
+   }   
+}
+
+@media (max-width: 400px) {
+   .card {
+      grid-column: span 4;
+   }
+   .item-title {
+      position:relative;
+      left:0;
+   }
+}
+
+@media all and(max-width: 400px) {
+  .usr {
+      position: absolute;
+      top: 90%;
+      left: 40%;
+      width: 15%;
+      height: 12%;
+      letter-spacing: 3px;
+      font-size: 18px;
+      -moz-transform: translateX(-40%) translateY(-50%);
+      -webkit-transform: translateX(-40%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+  }
+ }
+
+/* --------------Media Queries----------------- */

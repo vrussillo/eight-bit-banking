@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+<h1></h1>
+<div class="vault-opened">
+  <img
+    class="vault-opened-img"
+    src="static/images/just-vault-open-homepage-01.png"
+    alt="Vault"
+  />
+  <form class="usr" method="POST">
+    {{ form.hidden_tag() }} {% for field in form if field.widget.input_type !=
+    'hidden' %}
+    <p>
+      {{ field.label }} {{ field }} {% for error in field.errors %} {{ error }}
+      {% endfor %}
+    </p>
+    {% endfor %}
+
+    <button class="btn btn-primary" id="btnreg1" type="submit">Register</button>
+  </form>
+</div>
+
+{% endblock %}

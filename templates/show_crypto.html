@@ -1,0 +1,80 @@
+{% extends 'base.html' %} {% block content %} {% if 'user_id' in session %}
+
+<ul class="navbar">
+  <li><a class="homenav" href="/">Home</a></li>
+  <li><a class="invnav" href="/inventory/{{user_id}}">Inventory</a></li>
+  <li><a class="cryptnav" href="/addcrypto">Add Crypto</a></li>
+  <li><a class="accountnav" href="/account/{{g.user.id}}">Account</a></li>
+  <li><a class="lgtnav" href="/logout">Logout</a></li>
+</ul>
+
+<!-- <h1>Type: {{crypto.crypt_name}} ----- Amount: {{crypto.amount}}</h1> -->
+{% for c in cryptos %} {% if crypto.crypt_name in curr_logos %}
+
+<div class="card-info-container">
+  <img
+    class="card-info"
+    alt="{{crypto.crypt_name}}"
+    src="{{ url_for('static', filename=curr_logos[crypto.crypt_name])}}"
+  />
+</div>
+{% endif %} {% if crypto.crypt_name in key_list %}
+<div
+  style="
+    height: 560px;
+    background-color: #1d2330;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 1px solid #282e3b;
+    border-radius: 4px;
+    text-align: right;
+    line-height: 14px;
+    font-size: 12px;
+    font-feature-settings: normal;
+    text-size-adjust: 100%;
+    box-shadow: inset 0 -20px 0 0 #262b38;
+    padding: 1px;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+  "
+>
+  <div style="height: 540px; padding: 0px; margin: 0px; width: 100%">
+    <iframe
+      src="https://widget.coinlib.io/widget?type=chart&theme=dark&coin_id={{value_list}}&pref_coin_id=1505"
+      width="100%"
+      height="536px"
+      scrolling="auto"
+      marginwidth="0"
+      marginheight="0"
+      frameborder="0"
+      border="0"
+      style="border: 0; margin: 0; padding: 0; line-height: 14px"
+    ></iframe>
+  </div>
+  <div
+    style="
+      color: #626b7f;
+      line-height: 14px;
+      font-weight: 400;
+      font-size: 11px;
+      box-sizing: border-box;
+      padding: 2px 6px;
+      width: 100%;
+      font-family: Verdana, Tahoma, Arial, sans-serif;
+    "
+  >
+    <a
+      href="https://coinlib.io"
+      target="_blank"
+      style="
+        font-weight: 500;
+        color: #626b7f;
+        text-decoration: none;
+        font-size: 11px;
+      "
+      >Cryptocurrency Prices</a
+    >&nbsp;by Coinlib
+  </div>
+</div>
+{% endif %}{% endfor %}{% endif %} {% endblock %}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="initial-scale=1, width=device-width, maximum-scale=1"
+    />
+    <link
+      rel="stylesheet"
+      href="https://bootswatch.com/5/minty/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css')}}"
+    />
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='images/just-vault-closed-homepage-01.png')}}"
+      type="image/png"
+    />
+  </head>
+  <title>8-Bit Banking</title>
+
+  <div class="chest-container">
+    <div class="playbutton-shelf">
+      <img
+        class="vault-closed-img"
+        src="{{ url_for('static', filename='/images/chest-art-playbutton-shelf-01.png')}}"
+        alt="Playbutton"
+      />
+    </div>
+
+    <audio loop id="myAudio">
+      <source
+        src="{{ url_for('static',
+      filename='/eight-bit-banking-greedy-instrumental.ogg')}}"
+        type="audio/ogg"
+      />
+      <source
+        src="{{ url_for('static',
+        filename='/eight-bit-banking-greedy-instrumental.mp3')}}"
+        type="audio/mpeg"
+      />
+      Your browser does not support the audio element.
+    </audio>
+    <button
+      class="btn btn-primary"
+      id="btnply"
+      onclick="togglePlay()"
+      type="button"
+    >
+      >/||
+    </button>
+  </div>
+
+  <div class="chest-container-toast">
+    <div class="toast-div">
+      <img
+        class="chest-toast"
+        src="{{ url_for('static', filename='/images/chest-art-toast-shelf-01.png')}}"
+        alt="Toast"
+      />
+    </div>
+  </div>
+  <div class="chest-container-egg-right">
+    <div class="egg-div">
+      <a href="https://eufoeni.com/">
+        <img
+          class="chest-egg"
+          src="{{ url_for('static', filename='/images/chest-art-egg-shelf-01.png')}}"
+          alt="Egg"
+      /></a>
+    </div>
+  </div>
+  <div class="chest-container-bag-right">
+    <div class="bag-div">
+      <img
+        class="chest-bag"
+        src="{{ url_for('static', filename='/images/chest-art-shoppingbag-shelf-01.png')}}"
+        alt="ShoppingBag"
+      />
+    </div>
+  </div>
+
+  <script src="static/audio.js"></script>
+
+  {% for msg in get_flashed_messages() %}
+  <div class="container" style="margin-top: 1em">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>{{ msg }}</strong>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+  </div>
+  {% endfor %} {% block content %}
+  <body></body>
+  {% endblock %}
+</html>

@@ -1,0 +1,68 @@
+{% extends 'base.html' %} {% block content %} {% if 'user_id' in session %}
+<ul class="navbar">
+  <li><a class="homenav" href="/">Home</a></li>
+  <li><a class="invnav" href="/inventory/{{g.user.id}}">Inventory</a></li>
+  <li><a class="cryptnav" href="/addcrypto">Add Crypto</a></li>
+  <li><a class="accountnav" href="/account/{{g.user.id}}">Account</a></li>
+  <li><a class="lgtnav" href="/logout">Logout</a></li>
+</ul>
+
+
+<div class="layout wrap">
+  {% for crypto in cryptos %}
+ 
+  <div class="card card-b">
+    <span class="item-title">{{crypto.crypt_name}}</span>
+    
+    {% if crypto.crypt_name in curr_logos %}
+    <div class="image-container">
+
+      <form action="{{ url_for('delete_crypto', crypt_id = crypto.id) }}" method="POST" class="delete-crypto">
+        <input type=hidden value='Delete' name=crypto_to_delete />
+        <input type=submit value="X" class="btn btn-secondary"/>
+      </form>
+
+      <a href="/show_crypto/{{crypto.id}}">
+      <img 
+        alt="Crypto"
+        src="{{ url_for('static', filename=curr_logos[crypto.crypt_name])}}"
+      />
+    </a>
+    </div>
+
+    {% else %}
+
+    <div class="image-container">
+      <a href="/show_crypto/{{crypto.id}}">
+      <img 
+        alt="{{crypto.crypt_name}}"
+        src="{{ url_for('static', filename='/images/inventory-money-01.png')}}"
+      />
+    </a>
+    </div>
+
+    {% endif %}
+
+      <span class="item-title-amnt">{{crypto.amount}}</span>
+    </div>
+  
+  {% endfor %}
+
+    <div class="card card-d">
+      <div class="image-container">
+        
+        <a href="/addcrypto">
+          <img
+            alt="add"
+            class="addcrypto"
+            src="{{ url_for('static', filename='/images/inventory-add-01.png')}}"
+          />
+        </a>
+      </div>
+      <span class="item-title">Add Crypto</span>
+    </div>
+  </div>
+</div>
+<div class="price-widget" style="height:62px; background-color: #1D2330; overflow:hidden; box-sizing: border-box; border: 1px solid #282E3B; border-radius: 4px; text-align: right; line-height:14px; block-size:62px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #262B38;padding:1px;padding: 0px; margin: 0px; width: 100%;"><div style="height:40px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=dark&pref_coin_id=1505&invert_hover=no" width="100%" height="36px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div><div class="price-widget" style="color: #626B7F; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;"></div></div>
+  {% endif %} {% endblock %}
+

@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="message">
+  <h4>Sorry traveler, that page doesn't exist! {{ request.status }}</h4>
+</div>
+
+<a class="errbtn" href="/"><b>Homepage</b></a>
+
+<div class="chest-skull">
+  <img
+    class="vault-closed-img"
+    src="{{ url_for('static', filename='/images/chest-giantskull-404-01.png')}}"
+    alt="Vault"
+  />
+</div>
+
+{% endblock %}

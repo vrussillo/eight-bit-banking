@@ -1,0 +1,106 @@
+{% extends 'base.html' %} {% block content %}
+<ul class="navbar">
+  <li><a class="homenav" href="/">Home</a></li>
+  <li><a class="invnav" href="/inventory/{{g.user.id}}">Inventory</a></li>
+  <li><a class="cryptnav" href="/addcrypto">Add Crypto</a></li>
+  <li><a class="accountnav" href="/account/{{g.user.id}}">Account</a></li>
+  <li><a class="lgtnav" href="/logout">Logout</a></li>
+</ul>
+
+{% if 'user_id' in session %}
+
+<div class="container">
+  <div class="row gutters">
+    <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+      <div class="cardacnt h-100">
+        <div class="card-body">
+          <div class="account-settings">
+            <div class="user-profile">
+              <div class="user-avatar">
+                <img
+                  src="{{ url_for('static', filename='/images/toast-suit-propic-01.png')}}"
+                  alt="{{g.user.username}}"
+                />
+              </div>
+              <h5 class="user-name">{{g.user.username}}</h5>
+              <h6 class="user-email">{{g.user.email}}</h6>
+            </div>
+            <div class="about">
+              <h5 class="mb-2 text-primary">Cryptos</h5>
+              {% for crypto in cryptos %}
+              <p class="account-p">{{crypto.crypt_name}}</p>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+      <div class="cardacnt h-100">
+        <div class="card-body">
+          <div class="row gutters">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+              <h6 class="mb-3 text-primary">Personal Details</h6>
+            </div>
+            <form method="POST" id="user_form">
+              {{ form.hidden_tag() }} {% for field in form if
+              field.widget.input_type != 'hidden' and field.name != 'password'
+              %} {% for error in field.errors %}
+              <span class="text-danger">{{ error }}</span>
+              {% endfor %} {% if field == form.username %}
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="form-group">
+                  <label for="fullName">Username:</label>
+                  {{ field(placeholder=field.label.text, class="form-control")
+                  }}
+                </div>
+              </div>
+
+              {% elif field == form.email %}
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="form-group">
+                  <label for="eMail">Email:</label>
+                  {{ field(placeholder=field.label.text, class="form-control")
+                  }}
+                </div>
+              </div>
+              {% elif field == form.image_url %}
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="form-group">
+                  <label for="eMail">Image Url:</label>
+                  {{ field(placeholder=field.label.text, class="form-control")
+                  }}
+                </div>
+              </div>
+              {% endif %} {% endfor %}
+
+              <p class="pwd-cnfrm">To confirm changes, enter your password:</p>
+              {% if form.password.errors %} {% for error in form.password.errors
+              %}
+              <span class="text-danger"> {{ error }} </span>
+              {% endfor %} {% endif %} {{ form.password(placeholder="Enter your
+              password to confirm", class="form-control") }}
+
+              <div class="edit-btn-area">
+                <button class="btn btn-success">Edit this user!</button>
+                <a
+                  href="/account/{{g.user.id}}"
+                  class="btn btn-outline-secondary"
+                  >Cancel</a
+                >
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<form
+  method="POST"
+  action="{{ url_for('delete_user', user_id = user.id) }}"
+  class="form-inline"
+>
+  <button class="btn btn-primary" id="btn-delete">Delete Profile</button>
+</form>
+{% endif %}{% endblock %}
