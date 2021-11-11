@@ -57,6 +57,7 @@ def shutdown_session(exception=None):
 
 @app.route('/')
 @app.route('/home')
+@app.route('/index')
 def index():
     """Return homepage."""
     user = g.user
