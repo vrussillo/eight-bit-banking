@@ -85,9 +85,8 @@
     </div>
   </div>
 
-  <script src="static/audio.js"></script>
-
-  {% for msg in get_flashed_messages() %}
+  <script src="{{ url_for('static', filename='audio.js') }}"></script>
+  {% block script %}{% endblock %} {% for msg in get_flashed_messages() %}
   <div class="container" style="margin-top: 1em">
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
       <strong>{{ msg }}</strong>
