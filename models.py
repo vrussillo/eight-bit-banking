@@ -26,7 +26,7 @@ class User(db.Model):
     inventory = db.relationship("Inventory", backref="user", cascade="all, delete-orphan")
     
     cryptos = db.relationship('Crypto', cascade="all, delete-orphan")
-    amount = db.relationship('Crypto', cascade="all, delete-orphan")
+    amount = db.relationship('Crypto', cascade="all, delete-orphan", overlaps="cryptos")
 
     # start_register
     @classmethod
