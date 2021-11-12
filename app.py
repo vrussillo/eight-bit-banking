@@ -1,6 +1,5 @@
 from operator import add
 import os
-import re
 from flask import Flask, render_template, session, redirect, flash, g, request
 # from flask_debugtoolbar import DebugToolbarExtension
 from forms import RegisterForm, LoginForm, AddCrypto, UserEditForm
@@ -9,15 +8,13 @@ from sqlalchemy.exc import IntegrityError
 from currencies import curr_logos
 from coinblibapi import coin_id, value_list, key_list
 
-uri = os.getenv("DATABASE_URL")  # or other relevant config var
-if uri.startswith("postgresql:///"):
-    uri = uri.replace("postgresql:///", "postgresql://", 1)
+
 
 CURR_USER_KEY = "user_id"
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','postgresql:///eight_bit_banking_db')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','postgres:///eight_bit_banking_db').replace("://", "ql://", 1)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
 app.config['SECRET_KEY'] = os.environ.get ('SECRET_KEY', 'billybobthorton1')
