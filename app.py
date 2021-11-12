@@ -1,7 +1,7 @@
 from operator import add
 import os
 from flask import Flask, render_template, session, redirect, flash, g, request
-from flask_debugtoolbar import DebugToolbarExtension
+# from flask_debugtoolbar import DebugToolbarExtension
 from forms import RegisterForm, LoginForm, AddCrypto, UserEditForm
 from models import connect_db, db, User, Inventory, Crypto
 from sqlalchemy.exc import IntegrityError
@@ -17,9 +17,9 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','postgresq
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
 app.config['SECRET_KEY'] = os.environ.get ('SECRET_KEY', 'billybobthorton1')
-app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
+# app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 
-debug = DebugToolbarExtension(app)
+# debug = DebugToolbarExtension(app)
 
 
 connect_db(app)
