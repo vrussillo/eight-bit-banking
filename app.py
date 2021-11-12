@@ -7,7 +7,7 @@ from models import connect_db, db, User, Inventory, Crypto
 from sqlalchemy.exc import IntegrityError
 from currencies import curr_logos
 from coinblibapi import coin_id, value_list, key_list
-import logging
+
 
 
 CURR_USER_KEY = "user_id"
@@ -27,8 +27,6 @@ connect_db(app)
 # db.drop_all()
 # db.create_all()
 
-app.logger.addHandler(logging.StreamHandler(sys.stdout))
-app.logger.setLevel(logging.ERROR)
 
 @app.before_request
 def add_user_to_g():
