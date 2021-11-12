@@ -24,8 +24,8 @@ app.config['SECRET_KEY'] = os.environ.get ('SECRET_KEY', 'billybobthorton1')
 
 
 connect_db(app)
-# db.drop_all()
-# db.create_all()
+db.drop_all()
+db.create_all()
 
 
 @app.before_request
