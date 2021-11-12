@@ -1,7 +1,7 @@
 from app import db
 from models import User, Crypto, Inventory
 
-db.drop_all()
+# db.drop_all()
 db.create_all()
 
 
