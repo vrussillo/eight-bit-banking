@@ -3,7 +3,7 @@ import os
 from flask import Flask, render_template, session, redirect, flash, g, request
 # from flask_debugtoolbar import DebugToolbarExtension
 from forms import RegisterForm, LoginForm, AddCrypto, UserEditForm
-from models import connect_db, db, User, Inventory, Crypto
+from models import connect_db, db, User, Inventory, Crypto, SQLAlchemy
 from sqlalchemy.exc import IntegrityError
 from currencies import curr_logos
 from coinblibapi import coin_id, value_list, key_list
