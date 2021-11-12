@@ -11,7 +11,7 @@ from coinblibapi import coin_id, value_list, key_list
 
 uri = os.getenv("DATABASE_URL")  # or other relevant config var
 if uri.startswith("postgresql:///"):
-    uri = uri.replace("postgresql://", "postgresql://", 1)
+    uri = uri.replace("postgresql:///", "postgresql://", 1)
 
 CURR_USER_KEY = "user_id"
 
