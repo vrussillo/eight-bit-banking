@@ -80,7 +80,7 @@ class Crypto (db.Model):
     crypto = db.relationship("Inventory", backref="crypto", cascade="all, delete-orphan")
     user_id = db.Column(db.Integer, db.ForeignKey("users.id", ondelete='CASCADE'), nullable=False)
     amount = db.Column(db.Float, nullable=False)
-    user = db.relationship('User')
+    user = db.relationship('User', overlaps="amount,cryptos")
 
     """ensure that crpto type/name is all uppercase"""
     @validates('id', 'crypt_name')
