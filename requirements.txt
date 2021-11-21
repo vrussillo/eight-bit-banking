@@ -34,6 +34,7 @@ ptyprocess==0.7.0
 pycparser==2.20
 pycryptodome==3.11.0
 Pygments==2.10.0
+python-dotenv==0.19.2
 requests==2.26.0
 six==1.16.0
 SQLAlchemy==1.4.26
