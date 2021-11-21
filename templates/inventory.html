@@ -33,6 +33,12 @@
     {% else %}
 
     <div class="image-container">
+
+      <form action="{{ url_for('delete_crypto', crypt_id = crypto.id) }}" method="POST" class="delete-crypto">
+        <input type=hidden value='Delete' name=crypto_to_delete />
+        <input type=submit value="X" class="btn btn-secondary"/>
+      </form>
+      
       <a href="/show_crypto/{{crypto.id}}">
       <img 
         alt="{{crypto.crypt_name}}"

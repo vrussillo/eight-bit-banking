@@ -2,11 +2,12 @@ from operator import add
 import os
 from flask import Flask, render_template, session, redirect, flash, g, request
 from flask_debugtoolbar import DebugToolbarExtension
+from requests import api
 from forms import RegisterForm, LoginForm, AddCrypto, UserEditForm
 from models import connect_db, db, User, Inventory, Crypto
 from sqlalchemy.exc import IntegrityError
 from currencies import curr_logos
-from coinblibapi import coin_id, value_list, key_list
+from coinblibapi import data
 from dotenv import load_dotenv
 
 
@@ -157,11 +158,17 @@ def crypto_info(crypt_id):
                 .filter(Crypto.id == crypt_id)
                 .all())
 
+
+    crypto_name = Crypto.crypt_name
+
+    api_data = data
+
+
     if not g.user:
         flash("Access unauthorized.", "danger")
         return redirect("/")
     
-    return render_template("show_crypto.html", crypto=crypto, user_id=user_id, curr_logos=curr_logos, cryptos=cryptos, coin_id=coin_id, value_list=value_list, key_list=key_list)
+    return render_template("show_crypto.html", crypto=crypto, user_id=user_id, curr_logos=curr_logos, cryptos=cryptos, crypto_name=crypto_name, api_data=api_data)
 
 
 @app.route('/inventory/<int:crypt_id>/delete', methods=["POST"])

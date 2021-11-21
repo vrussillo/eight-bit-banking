@@ -141,6 +141,40 @@ html, body {
 
 /* --------------Inventory----------------- */
 
+/* --------------API----------------- */
+.api-info {
+   font-family: 'pixeboyregular';
+   letter-spacing: 4px;
+   font-size: 24px;
+   color: rgb(255, 255, 255);
+   justify-items: left;
+   padding-top: 1em;
+   padding-left: 2em;
+   padding-bottom: .5em;
+   word-wrap: break-word;
+}
+
+.api-info li{
+   margin: 0 0 7px 0;
+}
+
+.api-container {
+   left: 35%;
+   bottom: 55%;
+   max-width: 45%;
+   align-items: center;
+   position:relative;
+   background: rgb(5, 88, 82);
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+   border-radius: 15px;
+   display:grid;
+   z-index: -1;
+}
+
+
+
+/* --------------API----------------- */
+
 /* --------------Account----------------- */
 
 .container {

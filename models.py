@@ -87,11 +87,11 @@ class Crypto (db.Model):
     def convert_upper(self, key, value):
         return value.upper()
 
-    @classmethod
-    def addcrypto(cls, crypt_name, amount, user_id):
-        """add crypto helper"""
+    # @classmethod
+    # def addcrypto(cls, crypt_name, amount, user_id):
+    #     """add crypto helper"""
 
-        return cls(crypt_name=crypt_name, amount=amount, user_id=user_id)
+    #     return cls(crypt_name=crypt_name, amount=amount, user_id=user_id)
 
 
 

@@ -32,3 +32,6 @@ curr_logos = {
     "TETHER": "/images/inventory-usdt-01.png",
     "XRP": "/images/inventory-xrp-01.png"
 }
+
+key_list = list(curr_logos.keys())
+value_list = list(curr_logos.values())
