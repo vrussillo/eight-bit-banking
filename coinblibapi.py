@@ -26,8 +26,8 @@ data = resp.json()
 
 
 
-for key_list in data:
-    print(key_list)
+# for key_list in data:
+#     print(key_list)
 
 # def coin_function():
 #     for coin in data['coins']:
