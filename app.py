@@ -1,26 +1,31 @@
 from operator import add
 import os
 from flask import Flask, render_template, session, redirect, flash, g, request
-# from flask_debugtoolbar import DebugToolbarExtension
+from flask_debugtoolbar import DebugToolbarExtension
 from forms import RegisterForm, LoginForm, AddCrypto, UserEditForm
 from models import connect_db, db, User, Inventory, Crypto
 from sqlalchemy.exc import IntegrityError
 from currencies import curr_logos
 from coinblibapi import coin_id, value_list, key_list
-
+from dotenv import load_dotenv
 
 
 CURR_USER_KEY = "user_id"
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','postgres:///eight_bit_banking_db').replace("://", "ql://", 1)
+
+dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+load_dotenv(dotenv_path)
+
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL').replace("://", "ql://", 1)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
-app.config['SECRET_KEY'] = os.environ.get ('SECRET_KEY', 'billybobthorton1')
-# app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
+app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
+app.config['SECRET_KEY'] = os.environ.get ('SECRET_KEY')
 
-# debug = DebugToolbarExtension(app)
+
+debug = DebugToolbarExtension(app)
 
 
 connect_db(app)
@@ -151,11 +156,6 @@ def crypto_info(crypt_id):
                 .query
                 .filter(Crypto.id == crypt_id)
                 .all())
-
-                
-    
-    # for currency in crypto_currencies.currency:
-    #     print(currency)
 
     if not g.user:
         flash("Access unauthorized.", "danger")
