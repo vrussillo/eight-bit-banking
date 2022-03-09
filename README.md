@@ -1,6 +1,6 @@
 # Eight-Bit-Banking
 
-* an Eight Bit themed banking app that stores crypto currencies in a "Mine-Craft" like inventory
+*** an Eight Bit themed banking app that stores crypto currencies in a "MineCraft" like inventory
 
 # Live URL:  
 
@@ -8,13 +8,17 @@
 
 # Demo:
 
-No need to create an account just Login with test account * username: "TestME" *password: "TesTTEST"
+* No need to create an account just Login with test account:
+
+ * username: "TestME" 
+ * password: "TesTTEST"
 
 # Installation:
 
-After creating a virtual environment, run: ```pip install -r requirements.txt``` in your terminal.
+After creating a virtual environment, run: 
 
-```source venv/bin/activate``
+```pip install -r requirements.txt```
+```source venv/bin/activate```
 ```flask run```
 
 
@@ -41,4 +45,4 @@ After creating a virtual environment, run: ```pip install -r requirements.txt```
 
 # Known Issues: 
 
-There are some bottlenecking issues that I need to address. Some of the CSS elements are slow to run upon page loading. API info is not revealed in the Live URL for heroku.
+* There are some bottlenecking issues that I need to address. Some of the CSS elements are slow to run upon page loading. API info is not revealed in the Live URL for heroku.
