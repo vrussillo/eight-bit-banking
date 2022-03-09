@@ -8,11 +8,11 @@
 
 # Demo:
 
-* No need to create an account just Login with test account:
+* No need to create an account just Login with test account on Heroku:
+
+username: "TestME" 
 <br />
- * username: "TestME" 
-<br />
- * password: "TesTTEST"
+password: "TesTTEST"
 
 # Installation:
 
