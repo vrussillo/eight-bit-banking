@@ -1,6 +1,6 @@
 # Eight-Bit-Banking
 
-*** an Eight Bit themed banking app that stores crypto currencies in a "MineCraft" like inventory
+* an Eight Bit themed banking app that stores crypto currencies in a "MineCraft" like inventory
 
 # Live URL:  
 
@@ -9,16 +9,19 @@
 # Demo:
 
 * No need to create an account just Login with test account:
-
+<br />
  * username: "TestME" 
+<br />
  * password: "TesTTEST"
 
 # Installation:
 
 After creating a virtual environment, run: 
-
+<br />
 ```pip install -r requirements.txt```
+<br />
 ```source venv/bin/activate```
+<br />
 ```flask run```
 
 
