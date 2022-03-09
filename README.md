@@ -1,8 +1,28 @@
-Live URL:  https://eight-bit-banking.herokuapp.com/
+# Eight-Bit-Banking
 
-The requirements.txt will reveal all dependencies/packages needed to run the Flask-Application. After creating a virtual environment, run: pip install -r requirements.txt in your shell.
+* an Eight Bit themed banking app that stores crypto currencies in a "Mine-Craft" like inventory
+
+# Live URL:  
+
+[https://eight-bit-banking.herokuapp.com/](https://eight-bit-banking.herokuapp.com/)
+
+# Demo:
+
+No need to create an account just Login with test account * username: "TestME" *password: "TesTTEST"
+
+# Installation:
+
+After creating a virtual environment, run: ```pip install -r requirements.txt``` in your terminal.
+
+```source venv/bin/activate``
+```flask run```
 
 
+# API-Usage:
+
+* fetches from Coinlib API and responds with Symbol, Name, Rank, Price, Market Cap, Volume 24h, and Delta 24h for specified crypto insertion.
+
+# Screen-shots:
 
 ![Home Page](./screenshots/Home-Page.png)
 
@@ -19,4 +39,6 @@ The requirements.txt will reveal all dependencies/packages needed to run the Fla
 ![API Info Page](./screenshots/API-Info-Page.png)
 
 
-Known Issues: There are some bottlenecking issues that I need to address. Some of the CSS elements are slow to run upon page loading. API info is not revealed in the Live URL for heroku.
+# Known Issues: 
+
+There are some bottlenecking issues that I need to address. Some of the CSS elements are slow to run upon page loading. API info is not revealed in the Live URL for heroku.
