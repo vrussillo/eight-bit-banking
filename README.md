@@ -10,9 +10,9 @@
 
 * No need to create an account just Login with test account on Heroku:
 
-username: "TestME" 
+* username: "TestME" 
 <br />
-password: "TesTTEST"
+* password: "TesTTEST"
 
 # Installation:
 
